@@ -1,6 +1,11 @@
 .work-section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .container {
@@ -9,7 +14,6 @@
 
 .work {
   @extend %list;
-  display: flex;
 
   &__text {
     margin-top: 0;
@@ -18,6 +22,9 @@
   }
 
   &__title {
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
     margin-top: 0;
     margin-bottom: 10px;
     color: $title-text-color;
@@ -28,17 +35,24 @@
 }
 
 .work__item {
-  width: calc((100% - 90px) / 4);
+  @media screen and (max-width: 1199px) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
 
-  &:not(:last-child) {
-    margin-right: 30px;
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 90px) / 4);
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
   }
 
   &--icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     background-color: $bg-team-color;
     height: 120px;
   }
