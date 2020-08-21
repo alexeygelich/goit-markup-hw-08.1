@@ -1,0 +1,46 @@
+.employment-section {
+  padding-top: 94px;
+  margin-bottom: 94px;
+}
+
+.employment {
+  @extend %list;
+  display: flex;
+
+  &__title {
+    margin-top: 0px;
+    margin-bottom: 50px;
+    color: $title-text-color;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+  }
+
+  &__item {
+    position: relative;
+    width: calc((100% - 60px) / 3);
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 0;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+
+    color: $white-color;
+    background-color: $bg-text-color;
+
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}

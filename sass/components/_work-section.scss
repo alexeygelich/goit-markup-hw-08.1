@@ -1,0 +1,45 @@
+.work-section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.container {
+  @extend %container;
+}
+
+.work {
+  @extend %list;
+  display: flex;
+
+  &__text {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.71;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: $title-text-color;
+
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+.work__item {
+  width: calc((100% - 90px) / 4);
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &--icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    background-color: $bg-team-color;
+    height: 120px;
+  }
+}
