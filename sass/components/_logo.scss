@@ -1,5 +1,8 @@
 .logo {
-  margin-right: 85px;
+  @media screen and (min-width: 768px) {
+    margin-right: 88px;
+  }
+
   color: $accent-text-color;
   font-family: Raleway;
   font-weight: 700;
@@ -12,8 +15,8 @@
     font-size: 26px;
     line-height: 1.2;
   }
-}
 
-.logo__studio {
-  color: $title-text-color;
+  &__studio {
+    color: $title-text-color;
+  }
 }

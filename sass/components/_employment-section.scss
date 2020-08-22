@@ -1,4 +1,7 @@
 .employment-section {
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
   padding-top: 94px;
   margin-bottom: 94px;
 }

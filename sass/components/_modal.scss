@@ -23,7 +23,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 528px;
+  width: calc(100% - 30px);
   min-height: 581px;
   padding: 40px;
 
@@ -39,7 +39,7 @@
     margin-bottom: 30px;
     font-weight: 700;
     font-size: 20px;
-    line-height: 1.15;
+    line-height: 1.5;
     text-align: center;
     letter-spacing: 0.03em;
 
@@ -93,7 +93,8 @@
     display: block;
     left: 42px;
     top: 50%;
-    font-size: 16px;
+    font-size: 12px;
+    line-height: 1.16;
     transform: translate(0, -50%);
     transition: transform $time-animation $cubic-bezier-dafault,
       color $time-animation $cubic-bezier-dafault;
@@ -178,6 +179,7 @@
   align-items: center;
   line-height: 1.71;
   letter-spacing: 0.03em;
+  font-size: 12px;
 
   &--icon {
     margin-right: 8px;
@@ -188,6 +190,10 @@
     transition: background-color $time-animation $cubic-bezier-dafault,
       border-color $time-animation $cubic-bezier-dafault,
       background-image $time-animation $cubic-bezier-dafault;
+  }
+
+  &--text {
+    font-size: 12px;
   }
 }
 
