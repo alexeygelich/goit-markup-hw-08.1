@@ -1,8 +1,5 @@
 .logo {
-  @media screen and (min-width: 768px) {
-    margin-right: 88px;
-  }
-
+  display: inline-flex;
   color: $accent-text-color;
   font-family: Raleway;
   font-weight: 700;

@@ -14,6 +14,9 @@
 
 .work {
   @extend %list;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__text {
     margin-top: 0;
@@ -35,6 +38,12 @@
 }
 
 .work__item {
+  width: 100%;
+
+  @media screen and (min-width: 480px) {
+    width: 450px;
+  }
+
   @media screen and (max-width: 1199px) {
     &:not(:last-child) {
       margin-bottom: 30px;
@@ -55,5 +64,9 @@
     margin-bottom: 30px;
     background-color: $bg-team-color;
     height: 120px;
+
+    @media screen and (min-width: 480px) {
+      width: 450px;
+    }
   }
 }

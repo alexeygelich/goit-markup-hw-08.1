@@ -7,6 +7,7 @@
   @extend %list;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: -15px;
 
   &__title {
@@ -27,6 +28,10 @@
   width: calc((100% - 60px) / 2);
   height: 90px;
   margin: 15px;
+
+  @media screen and (min-width: 480px) {
+    width: 210px;
+  }
 
   &--icon {
     fill: $clients-color;
