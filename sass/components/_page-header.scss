@@ -92,8 +92,13 @@
   &__link--current {
     @extend .site-nav__link;
     padding-bottom: 8px;
+    padding-top: 8px;
     position: relative;
     color: $accent-text-color;
+    @media screen and (min-width: 768px) {
+      padding-bottom: 32px;
+      padding-top: 32px;
+    }
   }
 
   &__link--current::after {
@@ -110,12 +115,18 @@
 
 .auth-nav {
   @extend %list;
-  height: 100%;
-  align-items: center;
-
-  @media screen and (min-width: 1200px) {
-    display: flex;
+  display: flex;
+  @media screen and (max-width: 1199px) {
+    flex-direction: column;
   }
+
+  align-items: center;
+  justify-content: center;
+
+  // @media screen and (min-width: 1200px) {
+  //   display: flex;
+  //   flex-direction: row;
+  // }
 
   &__item:not(:last-child) {
     @media screen and (max-width: 767px) {
@@ -159,7 +170,7 @@
       line-height: 1.16;
       letter-spacing: 0.02em;
     }
-    @media screen and (min-width: 1200) {
+    @media screen and (min-width: 1200px) {
       font-weight: 500;
       font-size: 14px;
       line-height: 1.16;
