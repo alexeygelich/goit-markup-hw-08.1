@@ -1,6 +1,17 @@
+.portfolio-container {
+  @extend %container;
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    // max-width: 1000px;
+  }
+}
+
 .page-main {
   padding-top: 60px;
   margin-bottom: 60px;
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .container {
@@ -12,6 +23,10 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+  }
 
   &__item {
     margin-bottom: 15px;
@@ -47,13 +62,23 @@
 
 /* Cards */
 
+.company-cards {
+  display: flex;
+  justify-content: center;
+}
+
 .cards {
   @extend %list;
-  @extend %container;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+    max-width: 768px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1200px;
+  }
 
   &__image {
     margin-bottom: 20px;
@@ -75,15 +100,15 @@
   &__description {
     position: absolute;
     display: inline-block;
-    top: 63px;
+    top: 100%;
     left: 24px;
     right: 24px;
-    transform: translateY(200%);
     margin-top: 0;
     margin-bottom: 0;
     color: $white-color;
     font-size: 18px;
     line-height: 1.56;
+    transform: translateY(0);
     transition: transform $time-animation $cubic-bezier-dafault;
   }
 
@@ -99,17 +124,31 @@
 }
 
 .cards__item {
+  display: block;
   width: 100%;
-  @media screen and (min-width: 480px) {
-    width: 450px;
-  }
-
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid #eeeeee;
   box-sizing: border-box;
   text-decoration: none;
 
+  @media screen and (min-width: 480px) {
+    width: 450px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 354px;
+    margin: 15px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 370px;
+  }
+
   &:not(:last-child) {
-    margin-bottom: 30px;
+    @media screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -126,10 +165,23 @@
   }
 
   &:hover .cards__description,
+  &:focus .cards__description {
+    @media screen and (min-width: 480px) {
+      transform: translateY(calc(-100% - 77px));
+    }
+
+    @media screen and (min-width: 768px) {
+      transform: translateY(calc(-100% - 49px));
+    }
+
+    @media screen and (min-width: 1200px) {
+      transform: translateY(calc(-100% - 63px));
+    }
+  }
+
   &:hover .cards__thumb::before,
-  &:focus .cards__description,
   &:focus .cards__thumb::before {
-    transform: translateY(0);
+    transform: translateY(-100%);
   }
 }
 
@@ -140,12 +192,12 @@
   &::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: 100%;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: $cards-bg-color;
-    transform: translateY(100%);
+    transform: translateY(0);
     transition: transform $time-animation $cubic-bezier-dafault;
   }
 }
