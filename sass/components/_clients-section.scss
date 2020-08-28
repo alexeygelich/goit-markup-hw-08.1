@@ -3,6 +3,18 @@
   padding-top: 60px;
 }
 
+.clients-container {
+  @extend %container;
+
+  @media screen and (max-width: 767px) {
+    max-width: 500px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    max-width: 1000px;
+  }
+}
+
 .clients {
   @extend %list;
   display: flex;
@@ -25,12 +37,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: calc((100% - 60px) / 2);
+  width: 100%;
   height: 90px;
   margin: 15px;
 
   @media screen and (min-width: 480px) {
     width: 210px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 226px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 170px;
   }
 
   &--icon {
