@@ -510,7 +510,7 @@ summary {
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-.list, .site-nav, .auth-nav, .filter, .cards {
+.list, .site-nav, .auth-nav, .filter, .cards, .join__social {
   list-style: none;
   margin-top: 0;
   margin-bottom: 0;
@@ -1059,29 +1059,61 @@ img {
   background-color: #2f303a;
 }
 
-.footer__join {
-  margin-bottom: 60px;
+@media screen and (min-width: 1200px) {
+  .footer__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
-.footer__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.footer__container--mob {
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__container--mob {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer__container--mob {
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-bottom: 0;
+  }
 }
 
 .footer__container--nav {
   text-align: center;
-  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__container--nav {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer__container--nav {
+    margin-right: 70px;
+  }
 }
 
 .footer__logo {
@@ -1128,9 +1160,9 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .join__social--icon {
@@ -1165,6 +1197,8 @@ img {
 
 /* Subscribe */
 .subscribe {
+  margin-left: auto;
+  margin-right: auto;
   color: #ffffff;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -1172,10 +1206,24 @@ img {
   width: 100%;
 }
 
+@media screen and (min-width: 480px) {
+  .subscribe {
+    max-width: 450px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .subscribe {
+    max-width: 570px;
+  }
+}
+
 .subscribe__button {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .subscribe__input {
@@ -1188,6 +1236,13 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   background-color: #2f303a;
+}
+
+@media screen and (min-width: 1200px) {
+  .subscribe__input {
+    margin-bottom: 0;
+    margin-right: 12px;
+  }
 }
 
 .subscribe__text {
@@ -1204,25 +1259,27 @@ img {
 
 .subscribe__label {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: block;
+}
+
+@media screen and (min-width: 1200px) {
+  .subscribe__label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .subscribe__title {
   margin-top: 0;
   margin-bottom: 20px;
   text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .subscribe__title {
+    text-align: left;
+  }
 }
 
 .subscribe__title--button {
